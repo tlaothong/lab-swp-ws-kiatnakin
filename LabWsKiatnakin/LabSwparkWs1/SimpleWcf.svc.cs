@@ -13,7 +13,7 @@ namespace LabSwparkWs1
     {
         public string Greeting(string name)
         {
-            var msg = string.Format("Hello, {0}. Current time here is {1}.", name, DateTime.Now);
+            var msg = string.Format("Hello, {0}. Current time here is {1}.", name, DateTime.Now.ToLongTimeString());
             return msg;
         }
     }
