@@ -32,5 +32,15 @@ namespace Workshop1.Properties {
                 return ((string)(this["Workshop1_SimpleSvc_SimpleWebService"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:10485/FirstService.asmx")]
+        public string Workshop1_FirstSvc_FirstService {
+            get {
+                return ((string)(this["Workshop1_FirstSvc_FirstService"]));
+            }
+        }
     }
 }

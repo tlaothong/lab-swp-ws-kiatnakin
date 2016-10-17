@@ -5,5 +5,8 @@
     <Setting Name="Workshop1_SimpleSvc_SimpleWebService" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://lab-swpark-ws1.azurewebsites.net/SimpleWebService.asmx</Value>
     </Setting>
+    <Setting Name="Workshop1_FirstSvc_FirstService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:10485/FirstService.asmx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

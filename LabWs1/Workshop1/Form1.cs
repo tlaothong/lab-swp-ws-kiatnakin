@@ -31,5 +31,13 @@ namespace Workshop1
             var result = svc.Greeting(NameTextBox.Text);
             MessageBox.Show(result);
         }
+
+        private void NumToTextButton_Click(object sender, EventArgs e)
+        {
+            var svc = new FirstSvc.FirstService();
+            var number = Convert.ToInt32(NameTextBox.Text);
+            var result = svc.NumToEng(number);
+            MessageBox.Show(result);
+        }
     }
 }
