@@ -20,7 +20,7 @@ namespace LabSwparkWs1
         [WebMethod]
         public string Greeting(string name)
         {
-            var msg = string.Format("Hi, {0}. Current time here is {0}.", DateTime.Now);
+            var msg = string.Format("Hi, {0}. Current time here is {1}.", name, DateTime.Now);
             return msg;
         }
     }
