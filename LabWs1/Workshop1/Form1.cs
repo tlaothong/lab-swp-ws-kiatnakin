@@ -16,5 +16,20 @@ namespace Workshop1
         {
             InitializeComponent();
         }
+
+        private void CallButton_Click(object sender, EventArgs e)
+        {
+            var svc = new SimpleSvc.SimpleWebService();
+            //svc.PreAuthenticate = true;
+            var result = svc.Greeting(NameTextBox.Text);
+            MessageBox.Show(result);
+        }
+
+        private void CallSvcButton_Click(object sender, EventArgs e)
+        {
+            var svc = new SimpleWcf.SimpleWcfClient();
+            var result = svc.Greeting(NameTextBox.Text);
+            MessageBox.Show(result);
+        }
     }
 }
