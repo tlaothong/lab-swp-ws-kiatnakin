@@ -48,5 +48,13 @@ namespace Workshop1
             var result = svc.Add100(number);
             MessageBox.Show(result);
         }
+
+        private void NumWcfButton_Click(object sender, EventArgs e)
+        {
+            var svc = new FirstWcfSvc.FirstWcfServiceClient();
+            var number = Convert.ToInt32(NameTextBox.Text);
+            var result = svc.NumToEng(number);
+            MessageBox.Show(result);
+        }
     }
 }

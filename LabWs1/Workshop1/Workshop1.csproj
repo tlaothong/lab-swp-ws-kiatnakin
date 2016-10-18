@@ -58,6 +58,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\FirstWcfSvc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\SimpleWcf\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -94,6 +99,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\FirstWcfSvc\FirstWcfService.wsdl" />
+    <None Include="Service References\FirstWcfSvc\FirstWcfService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FirstWcfSvc\FirstWcfService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\SimpleWcf\SimpleWcf.wsdl" />
     <None Include="Service References\SimpleWcf\SimpleWcf.xsd">
       <SubType>Designer</SubType>
@@ -149,6 +161,7 @@
     <None Include="Web References\SimpleSvc\SimpleWebService.disco" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\FirstWcfSvc\" />
     <WCFMetadataStorage Include="Service References\SimpleWcf\" />
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +181,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Web References\FirstSvc\FirstService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FirstWcfSvc\FirstWcfService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FirstWcfSvc\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FirstWcfSvc\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FirstWcfSvc\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

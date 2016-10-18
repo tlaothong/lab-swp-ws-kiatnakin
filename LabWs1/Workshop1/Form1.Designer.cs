@@ -34,6 +34,7 @@
             this.CallSvcButton = new System.Windows.Forms.Button();
             this.NumToTextButton = new System.Windows.Forms.Button();
             this.Add100Button = new System.Windows.Forms.Button();
+            this.NumWcfButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -96,11 +97,23 @@
             this.Add100Button.UseVisualStyleBackColor = true;
             this.Add100Button.Click += new System.EventHandler(this.Add100Button_Click);
             // 
+            // NumWcfButton
+            // 
+            this.NumWcfButton.AutoSize = true;
+            this.NumWcfButton.Location = new System.Drawing.Point(378, 171);
+            this.NumWcfButton.Name = "NumWcfButton";
+            this.NumWcfButton.Size = new System.Drawing.Size(92, 30);
+            this.NumWcfButton.TabIndex = 6;
+            this.NumWcfButton.Text = "Num WCF";
+            this.NumWcfButton.UseVisualStyleBackColor = true;
+            this.NumWcfButton.Click += new System.EventHandler(this.NumWcfButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(511, 324);
+            this.Controls.Add(this.NumWcfButton);
             this.Controls.Add(this.Add100Button);
             this.Controls.Add(this.NumToTextButton);
             this.Controls.Add(this.CallSvcButton);
@@ -122,6 +135,7 @@
         private System.Windows.Forms.Button CallSvcButton;
         private System.Windows.Forms.Button NumToTextButton;
         private System.Windows.Forms.Button Add100Button;
+        private System.Windows.Forms.Button NumWcfButton;
     }
 }
 
