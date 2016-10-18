@@ -35,6 +35,8 @@ namespace Workshop1.FirstSvc {
         
         private System.Threading.SendOrPostCallback NumToEngOperationCompleted;
         
+        private System.Threading.SendOrPostCallback Add100OperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -81,6 +83,9 @@ namespace Workshop1.FirstSvc {
         
         /// <remarks/>
         public event NumToEngCompletedEventHandler NumToEngCompleted;
+        
+        /// <remarks/>
+        public event Add100CompletedEventHandler Add100Completed;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/HelloWorld", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -170,6 +175,35 @@ namespace Workshop1.FirstSvc {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Add100", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string Add100(int number) {
+            object[] results = this.Invoke("Add100", new object[] {
+                        number});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Add100Async(int number) {
+            this.Add100Async(number, null);
+        }
+        
+        /// <remarks/>
+        public void Add100Async(int number, object userState) {
+            if ((this.Add100OperationCompleted == null)) {
+                this.Add100OperationCompleted = new System.Threading.SendOrPostCallback(this.OnAdd100OperationCompleted);
+            }
+            this.InvokeAsync("Add100", new object[] {
+                        number}, this.Add100OperationCompleted, userState);
+        }
+        
+        private void OnAdd100OperationCompleted(object arg) {
+            if ((this.Add100Completed != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Add100Completed(this, new Add100CompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -253,6 +287,32 @@ namespace Workshop1.FirstSvc {
         private object[] results;
         
         internal NumToEngCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void Add100CompletedEventHandler(object sender, Add100CompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Add100CompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Add100CompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

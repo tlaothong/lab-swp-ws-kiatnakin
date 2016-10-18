@@ -44,6 +44,9 @@ namespace Workshop1
         {
             var svc = new FirstSvc.FirstService();
             // Call Add100 here
+            var number = Convert.ToInt32(NameTextBox.Text);
+            var result = svc.Add100(number);
+            MessageBox.Show(result);
         }
     }
 }
