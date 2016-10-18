@@ -49,11 +49,11 @@ namespace Workshop1
             MessageBox.Show(result);
         }
 
-        private void NumWcfButton_Click(object sender, EventArgs e)
+        private async void NumWcfButton_Click(object sender, EventArgs e)
         {
             var svc = new FirstWcfSvc.FirstWcfServiceClient();
             var number = Convert.ToInt32(NameTextBox.Text);
-            var result = svc.NumToEng(number);
+            var result = await svc.NumToEngAsync(number);
             MessageBox.Show(result);
         }
 
@@ -61,7 +61,13 @@ namespace Workshop1
         {
             var svc = new FirstWcfWeb.FirstWcfService();
             var number = Convert.ToInt32(NameTextBox.Text);
-            var result = svc.Add200(number, false);
+            svc.Add200Completed += Svc_Add200Completed;
+            svc.Add200Async(number, true);
+        }
+
+        private void Svc_Add200Completed(object sender, FirstWcfWeb.Add200CompletedEventArgs e)
+        {
+            var result = e.Result;
             MessageBox.Show(result);
         }
     }
