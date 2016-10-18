@@ -42,5 +42,15 @@ namespace Workshop1.Properties {
                 return ((string)(this["Workshop1_FirstSvc_FirstService"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:10485/FirstWcfService.svc")]
+        public string Workshop1_FirstWcfWeb_FirstWcfService {
+            get {
+                return ((string)(this["Workshop1_FirstWcfWeb_FirstWcfService"]));
+            }
+        }
     }
 }

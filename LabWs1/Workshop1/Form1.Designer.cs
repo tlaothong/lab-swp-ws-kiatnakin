@@ -35,6 +35,7 @@
             this.NumToTextButton = new System.Windows.Forms.Button();
             this.Add100Button = new System.Windows.Forms.Button();
             this.NumWcfButton = new System.Windows.Forms.Button();
+            this.Add200Button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -108,11 +109,23 @@
             this.NumWcfButton.UseVisualStyleBackColor = true;
             this.NumWcfButton.Click += new System.EventHandler(this.NumWcfButton_Click);
             // 
+            // Add200Button
+            // 
+            this.Add200Button.AutoSize = true;
+            this.Add200Button.Location = new System.Drawing.Point(378, 238);
+            this.Add200Button.Name = "Add200Button";
+            this.Add200Button.Size = new System.Drawing.Size(75, 30);
+            this.Add200Button.TabIndex = 7;
+            this.Add200Button.Text = "Add200";
+            this.Add200Button.UseVisualStyleBackColor = true;
+            this.Add200Button.Click += new System.EventHandler(this.Add200Button_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(511, 324);
+            this.Controls.Add(this.Add200Button);
             this.Controls.Add(this.NumWcfButton);
             this.Controls.Add(this.Add100Button);
             this.Controls.Add(this.NumToTextButton);
@@ -136,6 +149,7 @@
         private System.Windows.Forms.Button NumToTextButton;
         private System.Windows.Forms.Button Add100Button;
         private System.Windows.Forms.Button NumWcfButton;
+        private System.Windows.Forms.Button Add200Button;
     }
 }
 

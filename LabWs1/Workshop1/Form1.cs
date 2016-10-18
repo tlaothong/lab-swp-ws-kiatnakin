@@ -56,5 +56,13 @@ namespace Workshop1
             var result = svc.NumToEng(number);
             MessageBox.Show(result);
         }
+
+        private void Add200Button_Click(object sender, EventArgs e)
+        {
+            var svc = new FirstWcfWeb.FirstWcfService();
+            var number = Convert.ToInt32(NameTextBox.Text);
+            var result = svc.Add200(number, false);
+            MessageBox.Show(result);
+        }
     }
 }

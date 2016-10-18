@@ -66,5 +66,10 @@ namespace SimpleWebApp
             return words;
         }
 
+        public string Add200(int number)
+        {
+            System.Threading.Thread.Sleep(3456);
+            return string.Format("After add 200: {0}", number + 200);
+        }
     }
 }

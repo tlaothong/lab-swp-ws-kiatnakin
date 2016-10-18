@@ -13,5 +13,8 @@ namespace SimpleWebApp
     {
         [OperationContract]
         string NumToEng(int number);
+
+        [OperationContract]
+        string Add200(int number);
     }
 }
