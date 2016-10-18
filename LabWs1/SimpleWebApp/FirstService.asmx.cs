@@ -33,6 +33,11 @@ namespace SimpleWebApp
         {
             return NumberToWords(number);
         }
+        [WebMethod]
+        public string Add100(int number)
+        {
+            return string.Format("After add 100: {0}", number + 100);
+        }
 
         public static string NumberToWords(int number)
         {
