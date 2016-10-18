@@ -33,6 +33,7 @@
             this.CallButton = new System.Windows.Forms.Button();
             this.CallSvcButton = new System.Windows.Forms.Button();
             this.NumToTextButton = new System.Windows.Forms.Button();
+            this.Add100Button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -84,11 +85,23 @@
             this.NumToTextButton.UseVisualStyleBackColor = true;
             this.NumToTextButton.Click += new System.EventHandler(this.NumToTextButton_Click);
             // 
+            // Add100Button
+            // 
+            this.Add100Button.AutoSize = true;
+            this.Add100Button.Location = new System.Drawing.Point(378, 102);
+            this.Add100Button.Name = "Add100Button";
+            this.Add100Button.Size = new System.Drawing.Size(75, 30);
+            this.Add100Button.TabIndex = 5;
+            this.Add100Button.Text = "Add100";
+            this.Add100Button.UseVisualStyleBackColor = true;
+            this.Add100Button.Click += new System.EventHandler(this.Add100Button_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(511, 324);
+            this.Controls.Add(this.Add100Button);
             this.Controls.Add(this.NumToTextButton);
             this.Controls.Add(this.CallSvcButton);
             this.Controls.Add(this.CallButton);
@@ -108,6 +121,7 @@
         private System.Windows.Forms.Button CallButton;
         private System.Windows.Forms.Button CallSvcButton;
         private System.Windows.Forms.Button NumToTextButton;
+        private System.Windows.Forms.Button Add100Button;
     }
 }
 

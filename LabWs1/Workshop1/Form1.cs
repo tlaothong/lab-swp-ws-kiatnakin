@@ -39,5 +39,11 @@ namespace Workshop1
             var result = svc.NumToEng(number);
             MessageBox.Show(result);
         }
+
+        private void Add100Button_Click(object sender, EventArgs e)
+        {
+            var svc = new FirstSvc.FirstService();
+            // Call Add100 here
+        }
     }
 }
