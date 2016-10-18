@@ -116,6 +116,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="FirstService.asmx" />
+    <Content Include="FirstWcfService.svc" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -196,9 +197,13 @@
       <DependentUpon>FirstService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FirstWcfService.svc.cs">
+      <DependentUpon>FirstWcfService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="IFirstWcfService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
