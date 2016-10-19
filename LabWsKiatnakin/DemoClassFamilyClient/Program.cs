@@ -26,7 +26,7 @@ namespace DemoClassFamilyClient
                 man.LastName,
                 man.NumOfEmployees);
 
-            var emps = svc.ListAllEmployees();
+            var emps = svc.DemoYield();
             foreach (var emp in emps)
             {
                 Console.WriteLine("{0}:{1}  {2}",

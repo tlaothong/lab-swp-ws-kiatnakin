@@ -8,12 +8,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Employee" nillable="true" type="tns:Employee" />
-  <xs:complexType name="ArrayOfEmployee">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Employee" nillable="true" type="tns:Employee" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfEmployee" nillable="true" type="tns:ArrayOfEmployee" />
   <xs:complexType name="Manager">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Employee">
@@ -24,4 +18,10 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="Manager" nillable="true" type="tns:Manager" />
+  <xs:complexType name="ArrayOfEmployee">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Employee" nillable="true" type="tns:Employee" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmployee" nillable="true" type="tns:ArrayOfEmployee" />
 </xs:schema>

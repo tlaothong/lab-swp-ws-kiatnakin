@@ -25,10 +25,22 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="DemoYield">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DemoYieldResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DemoClassFamily.Models" minOccurs="0" name="DemoYieldResult" nillable="true" type="q3:ArrayOfEmployee" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="SetNumOfEmployee">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DemoClassFamily.Models" minOccurs="0" name="manager" nillable="true" type="q3:Manager" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DemoClassFamily.Models" minOccurs="0" name="manager" nillable="true" type="q4:Manager" />
         <xs:element minOccurs="0" name="numOfEmployees" type="xs:int" />
       </xs:sequence>
     </xs:complexType>

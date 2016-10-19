@@ -18,7 +18,24 @@ namespace DemoClassFamily
 
         public IEnumerable<Employee> DemoYield()
         {
-            throw new NotImplementedException();
+            yield return new Manager
+            {
+                EmployeeCode = "IT005",
+                FirstName = "John",
+                LastName = "Doe",
+            };
+            yield return new Employee
+            {
+                EmployeeCode = "IT006",
+                FirstName = "Tom",
+                LastName = "Hanks",
+            };
+            yield return new Employee
+            {
+                EmployeeCode = "IT007",
+                FirstName = "James",
+                LastName = "Bond",
+            };
         }
 
         public IEnumerable<Employee> ListAllEmployees()

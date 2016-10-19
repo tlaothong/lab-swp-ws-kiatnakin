@@ -130,6 +130,12 @@ namespace DemoClassFamilyClient.EmpSvc {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmpService/ListAllEmployees", ReplyAction="http://tempuri.org/IEmpService/ListAllEmployeesResponse")]
         System.Threading.Tasks.Task<DemoClassFamilyClient.EmpSvc.Employee[]> ListAllEmployeesAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmpService/DemoYield", ReplyAction="http://tempuri.org/IEmpService/DemoYieldResponse")]
+        DemoClassFamilyClient.EmpSvc.Employee[] DemoYield();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmpService/DemoYield", ReplyAction="http://tempuri.org/IEmpService/DemoYieldResponse")]
+        System.Threading.Tasks.Task<DemoClassFamilyClient.EmpSvc.Employee[]> DemoYieldAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmpService/SetNumOfEmployee", ReplyAction="http://tempuri.org/IEmpService/SetNumOfEmployeeResponse")]
         void SetNumOfEmployee(DemoClassFamilyClient.EmpSvc.Manager manager, int numOfEmployees);
         
@@ -178,6 +184,14 @@ namespace DemoClassFamilyClient.EmpSvc {
         
         public System.Threading.Tasks.Task<DemoClassFamilyClient.EmpSvc.Employee[]> ListAllEmployeesAsync() {
             return base.Channel.ListAllEmployeesAsync();
+        }
+        
+        public DemoClassFamilyClient.EmpSvc.Employee[] DemoYield() {
+            return base.Channel.DemoYield();
+        }
+        
+        public System.Threading.Tasks.Task<DemoClassFamilyClient.EmpSvc.Employee[]> DemoYieldAsync() {
+            return base.Channel.DemoYieldAsync();
         }
         
         public void SetNumOfEmployee(DemoClassFamilyClient.EmpSvc.Manager manager, int numOfEmployees) {

@@ -115,6 +115,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="DemoYieldService.asmx" />
     <Content Include="EmpService.svc" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -191,6 +192,10 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DemoYieldService.asmx.cs">
+      <DependentUpon>DemoYieldService.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="EmpService.svc.cs">
       <DependentUpon>EmpService.svc</DependentUpon>
