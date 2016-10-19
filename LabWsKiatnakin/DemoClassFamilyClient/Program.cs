@@ -42,7 +42,7 @@ namespace DemoClassFamilyClient
                 LastName = "Cruise"
             };
 
-            svc.AddNewEmployee(tom);
+            svc.AddNewEmployee(man);
             Console.WriteLine("Tom has been added.");
         }
     }
