@@ -16,6 +16,11 @@ namespace DemoClassFamily
         {
         }
 
+        public IEnumerable<Employee> DemoYield()
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Employee> ListAllEmployees()
         {
             return new Employee[]

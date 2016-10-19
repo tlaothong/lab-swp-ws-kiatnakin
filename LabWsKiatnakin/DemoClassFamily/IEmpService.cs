@@ -17,6 +17,8 @@ namespace DemoClassFamily
         [OperationContract]
         IEnumerable<Employee> ListAllEmployees();
         [OperationContract]
+        IEnumerable<Employee> DemoYield();
+        [OperationContract]
         void SetNumOfEmployee(Manager manager, int numOfEmployees);
     }
 }
