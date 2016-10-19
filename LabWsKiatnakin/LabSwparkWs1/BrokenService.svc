@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="LabSwparkWs1.BrokenService" CodeBehind="BrokenService.svc.cs" %>

@@ -18,8 +18,18 @@ namespace ClientNet4.FirstWcfSvc {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFirstWcfService/NumToEng", ReplyAction="http://tempuri.org/IFirstWcfService/NumToEngResponse")]
         string NumToEng(int number);
         
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IFirstWcfService/NumToEng", ReplyAction="http://tempuri.org/IFirstWcfService/NumToEngResponse")]
+        System.IAsyncResult BeginNumToEng(int number, System.AsyncCallback callback, object asyncState);
+        
+        string EndNumToEng(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFirstWcfService/Add200", ReplyAction="http://tempuri.org/IFirstWcfService/Add200Response")]
         string Add200(int number);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IFirstWcfService/Add200", ReplyAction="http://tempuri.org/IFirstWcfService/Add200Response")]
+        System.IAsyncResult BeginAdd200(int number, System.AsyncCallback callback, object asyncState);
+        
+        string EndAdd200(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -28,7 +38,57 @@ namespace ClientNet4.FirstWcfSvc {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class NumToEngCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public NumToEngCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Add200CompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Add200CompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class FirstWcfServiceClient : System.ServiceModel.ClientBase<ClientNet4.FirstWcfSvc.IFirstWcfService>, ClientNet4.FirstWcfSvc.IFirstWcfService {
+        
+        private BeginOperationDelegate onBeginNumToEngDelegate;
+        
+        private EndOperationDelegate onEndNumToEngDelegate;
+        
+        private System.Threading.SendOrPostCallback onNumToEngCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAdd200Delegate;
+        
+        private EndOperationDelegate onEndAdd200Delegate;
+        
+        private System.Threading.SendOrPostCallback onAdd200CompletedDelegate;
         
         public FirstWcfServiceClient() {
         }
@@ -49,12 +109,108 @@ namespace ClientNet4.FirstWcfSvc {
                 base(binding, remoteAddress) {
         }
         
+        public event System.EventHandler<NumToEngCompletedEventArgs> NumToEngCompleted;
+        
+        public event System.EventHandler<Add200CompletedEventArgs> Add200Completed;
+        
         public string NumToEng(int number) {
             return base.Channel.NumToEng(number);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginNumToEng(int number, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginNumToEng(number, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string EndNumToEng(System.IAsyncResult result) {
+            return base.Channel.EndNumToEng(result);
+        }
+        
+        private System.IAsyncResult OnBeginNumToEng(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int number = ((int)(inValues[0]));
+            return this.BeginNumToEng(number, callback, asyncState);
+        }
+        
+        private object[] OnEndNumToEng(System.IAsyncResult result) {
+            string retVal = this.EndNumToEng(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnNumToEngCompleted(object state) {
+            if ((this.NumToEngCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.NumToEngCompleted(this, new NumToEngCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void NumToEngAsync(int number) {
+            this.NumToEngAsync(number, null);
+        }
+        
+        public void NumToEngAsync(int number, object userState) {
+            if ((this.onBeginNumToEngDelegate == null)) {
+                this.onBeginNumToEngDelegate = new BeginOperationDelegate(this.OnBeginNumToEng);
+            }
+            if ((this.onEndNumToEngDelegate == null)) {
+                this.onEndNumToEngDelegate = new EndOperationDelegate(this.OnEndNumToEng);
+            }
+            if ((this.onNumToEngCompletedDelegate == null)) {
+                this.onNumToEngCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnNumToEngCompleted);
+            }
+            base.InvokeAsync(this.onBeginNumToEngDelegate, new object[] {
+                        number}, this.onEndNumToEngDelegate, this.onNumToEngCompletedDelegate, userState);
+        }
+        
         public string Add200(int number) {
             return base.Channel.Add200(number);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAdd200(int number, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAdd200(number, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string EndAdd200(System.IAsyncResult result) {
+            return base.Channel.EndAdd200(result);
+        }
+        
+        private System.IAsyncResult OnBeginAdd200(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int number = ((int)(inValues[0]));
+            return this.BeginAdd200(number, callback, asyncState);
+        }
+        
+        private object[] OnEndAdd200(System.IAsyncResult result) {
+            string retVal = this.EndAdd200(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAdd200Completed(object state) {
+            if ((this.Add200Completed != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Add200Completed(this, new Add200CompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Add200Async(int number) {
+            this.Add200Async(number, null);
+        }
+        
+        public void Add200Async(int number, object userState) {
+            if ((this.onBeginAdd200Delegate == null)) {
+                this.onBeginAdd200Delegate = new BeginOperationDelegate(this.OnBeginAdd200);
+            }
+            if ((this.onEndAdd200Delegate == null)) {
+                this.onEndAdd200Delegate = new EndOperationDelegate(this.OnEndAdd200);
+            }
+            if ((this.onAdd200CompletedDelegate == null)) {
+                this.onAdd200CompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAdd200Completed);
+            }
+            base.InvokeAsync(this.onBeginAdd200Delegate, new object[] {
+                        number}, this.onEndAdd200Delegate, this.onAdd200CompletedDelegate, userState);
         }
     }
 }
