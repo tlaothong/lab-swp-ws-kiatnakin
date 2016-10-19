@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -70,6 +71,23 @@ namespace Workshop1
         {
             var result = e.Result;
             MessageBox.Show(result);
+        }
+
+        private void FaultButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var svc = new FirstWcfSvc.FirstWcfServiceClient();
+                var c = svc.Div(20, 0);
+                MessageBox.Show(string.Format("c: {0}", c));
+            }
+            catch (FaultException<FirstWcfSvc.DivFault> ex)
+            {
+                MessageBox.Show(ex.Code.Name);
+                MessageBox.Show(string.Format("A: {0}, B: {1}",
+                    ex.Detail.A, ex.Detail.B));
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

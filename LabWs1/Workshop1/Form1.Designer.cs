@@ -36,6 +36,7 @@
             this.Add100Button = new System.Windows.Forms.Button();
             this.NumWcfButton = new System.Windows.Forms.Button();
             this.Add200Button = new System.Windows.Forms.Button();
+            this.FaultButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -120,11 +121,23 @@
             this.Add200Button.UseVisualStyleBackColor = true;
             this.Add200Button.Click += new System.EventHandler(this.Add200Button_Click);
             // 
+            // FaultButton
+            // 
+            this.FaultButton.AutoSize = true;
+            this.FaultButton.Location = new System.Drawing.Point(28, 171);
+            this.FaultButton.Name = "FaultButton";
+            this.FaultButton.Size = new System.Drawing.Size(75, 30);
+            this.FaultButton.TabIndex = 8;
+            this.FaultButton.Text = "Fault";
+            this.FaultButton.UseVisualStyleBackColor = true;
+            this.FaultButton.Click += new System.EventHandler(this.FaultButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(511, 324);
+            this.Controls.Add(this.FaultButton);
             this.Controls.Add(this.Add200Button);
             this.Controls.Add(this.NumWcfButton);
             this.Controls.Add(this.Add100Button);
@@ -150,6 +163,7 @@
         private System.Windows.Forms.Button Add100Button;
         private System.Windows.Forms.Button NumWcfButton;
         private System.Windows.Forms.Button Add200Button;
+        private System.Windows.Forms.Button FaultButton;
     }
 }
 

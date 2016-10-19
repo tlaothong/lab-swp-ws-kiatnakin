@@ -112,6 +112,9 @@
     <None Include="Service References\FirstWcfSvc\FirstWcfService1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\FirstWcfSvc\FirstWcfService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\SimpleWcf\SimpleWcf.wsdl" />
     <None Include="Service References\SimpleWcf\SimpleWcf.xsd">
       <SubType>Designer</SubType>

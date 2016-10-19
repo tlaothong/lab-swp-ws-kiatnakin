@@ -7,10 +7,38 @@ using System.Text;
 
 namespace SimpleWebApp
 {
+    [DataContract]
+    public class DivFault
+    {
+        [DataMember]
+        public int A { get; set; }
+        [DataMember]
+        public int B { get; set; }
+    }
+
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "FirstWcfService" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select FirstWcfService.svc or FirstWcfService.svc.cs at the Solution Explorer and start debugging.
     public class FirstWcfService : IFirstWcfService
     {
+        public int Div(int a, int b)
+        {
+            try
+            {
+                return a / b;
+            }
+            catch (Exception)
+            {
+                var f = new DivFault
+                {
+                    A = a,
+                    B = b,
+                };
+                throw new FaultException<DivFault>(
+                    f,
+                    "Div error", new FaultCode("E500"));
+            }
+        }
+
         public string NumToEng(int number)
         {
             //return FirstService.NumberToWords(number);

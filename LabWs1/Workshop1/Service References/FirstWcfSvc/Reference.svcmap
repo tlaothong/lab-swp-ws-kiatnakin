@@ -24,6 +24,7 @@
   <Metadata>
     <MetadataFile FileName="FirstWcfService.xsd" MetadataType="Schema" ID="57f17472-6e7c-48b3-be64-2e7604463a2f" SourceId="1" SourceUrl="http://localhost:10485/FirstWcfService.svc?xsd=xsd0" />
     <MetadataFile FileName="FirstWcfService.wsdl" MetadataType="Wsdl" ID="7da90b9a-01bb-44f3-85ba-4280208c9c42" SourceId="1" SourceUrl="http://localhost:10485/FirstWcfService.svc?wsdl" />
+    <MetadataFile FileName="FirstWcfService2.xsd" MetadataType="Schema" ID="890f351e-15a9-4bee-9e86-51ae4b509153" SourceId="1" SourceUrl="http://localhost:10485/FirstWcfService.svc?xsd=xsd2" />
     <MetadataFile FileName="FirstWcfService.disco" MetadataType="Disco" ID="766b94cd-33da-4cdf-a07d-93fb95ee7660" SourceId="1" SourceUrl="http://localhost:10485/FirstWcfService.svc?disco" />
     <MetadataFile FileName="FirstWcfService1.xsd" MetadataType="Schema" ID="a3de8c9e-637a-425f-8d91-e6da61d86da9" SourceId="1" SourceUrl="http://localhost:10485/FirstWcfService.svc?xsd=xsd1" />
   </Metadata>

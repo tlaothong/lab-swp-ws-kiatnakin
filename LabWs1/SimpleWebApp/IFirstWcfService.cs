@@ -16,5 +16,9 @@ namespace SimpleWebApp
 
         [OperationContract]
         string Add200(int number);
+
+        [FaultContract(typeof(DivFault))]
+        [OperationContract]
+        int Div(int a, int b);
     }
 }
