@@ -9,6 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoOO", "DemoOO\DemoOO.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoREST", "DemoREST\DemoREST.csproj", "{DC85ACF0-312A-4403-B31B-36006633D47F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoClassFamily", "DemoClassFamily\DemoClassFamily.csproj", "{1EAFBFA0-1732-4B04-B310-D049B5B1C905}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoClassFamilyClient", "DemoClassFamilyClient\DemoClassFamilyClient.csproj", "{4B03FD20-4565-4BEC-AA29-0377B38CE35D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1EAFBFA0-1732-4B04-B310-D049B5B1C905} = {1EAFBFA0-1732-4B04-B310-D049B5B1C905}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +34,14 @@ Global
 		{DC85ACF0-312A-4403-B31B-36006633D47F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC85ACF0-312A-4403-B31B-36006633D47F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC85ACF0-312A-4403-B31B-36006633D47F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EAFBFA0-1732-4B04-B310-D049B5B1C905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EAFBFA0-1732-4B04-B310-D049B5B1C905}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EAFBFA0-1732-4B04-B310-D049B5B1C905}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EAFBFA0-1732-4B04-B310-D049B5B1C905}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B03FD20-4565-4BEC-AA29-0377B38CE35D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B03FD20-4565-4BEC-AA29-0377B38CE35D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B03FD20-4565-4BEC-AA29-0377B38CE35D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B03FD20-4565-4BEC-AA29-0377B38CE35D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
