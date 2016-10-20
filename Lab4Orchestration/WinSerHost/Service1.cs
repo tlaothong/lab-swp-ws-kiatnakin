@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace WinSerHost
 {
+    // For this service to work correctly,
+    // we must run the following command in Admin mode,
+    // netsh http add urlacl url=http://+:9889/BankA user="NT AUTHORITY\NETWORKSERVICE"
     public partial class Service1 : ServiceBase
     {
         public Service1()
