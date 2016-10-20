@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankBService", "BankBServic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppHost", "WebAppHost\WebAppHost.csproj", "{5E6B66E5-BE76-4198-81DC-EF8EC158A420}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleHost", "ConsoleHost\ConsoleHost.csproj", "{18251F97-8CED-4438-8D05-49E59620F77F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{5E6B66E5-BE76-4198-81DC-EF8EC158A420}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E6B66E5-BE76-4198-81DC-EF8EC158A420}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E6B66E5-BE76-4198-81DC-EF8EC158A420}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18251F97-8CED-4438-8D05-49E59620F77F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18251F97-8CED-4438-8D05-49E59620F77F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18251F97-8CED-4438-8D05-49E59620F77F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18251F97-8CED-4438-8D05-49E59620F77F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
