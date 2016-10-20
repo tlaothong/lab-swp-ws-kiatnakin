@@ -99,5 +99,10 @@ namespace SimpleWebApp
             System.Threading.Thread.Sleep(3456);
             return string.Format("After add 200: {0}", number + 200);
         }
+
+        public void OneMethod(int a, int b)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

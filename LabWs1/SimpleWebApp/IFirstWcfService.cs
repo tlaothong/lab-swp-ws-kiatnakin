@@ -20,5 +20,8 @@ namespace SimpleWebApp
         [FaultContract(typeof(DivFault))]
         [OperationContract]
         int Div(int a, int b);
+
+        [OperationContract(IsOneWay = true)]
+        void OneMethod(int a, int b);
     }
 }

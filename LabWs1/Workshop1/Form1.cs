@@ -79,13 +79,13 @@ namespace Workshop1
             {
                 var svc = new FirstWcfSvc.FirstWcfServiceClient();
                 var c = svc.Div(20, 0);
-                MessageBox.Show(string.Format("c: {0}", c));
+                MessageBox.Show(string.Format($"c: {c}", c));
             }
             catch (FaultException<FirstWcfSvc.DivFault> ex)
             {
                 MessageBox.Show(ex.Code.Name);
-                MessageBox.Show(string.Format("A: {0}, B: {1}",
-                    ex.Detail.A, ex.Detail.B));
+                MessageBox.Show(string.Format(
+                    $"A: {ex.Detail.A}, B: {ex.Detail.B}"));
                 MessageBox.Show(ex.ToString());
             }
         }
