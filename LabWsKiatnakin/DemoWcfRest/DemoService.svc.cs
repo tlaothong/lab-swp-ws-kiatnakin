@@ -19,7 +19,7 @@ namespace DemoWcfRest
         //     and include the following line in the operation body:
         //         WebOperationContext.Current.OutgoingResponse.ContentType = "text/xml";
         [OperationContract]
-        [WebGet(UriTemplate = "hi/{name}")]
+        [WebGet(UriTemplate = "hi/{name}", ResponseFormat = WebMessageFormat.Json)]
         public string Hello(string name)
         {
             return string.Format("Hello, {0}", name);
