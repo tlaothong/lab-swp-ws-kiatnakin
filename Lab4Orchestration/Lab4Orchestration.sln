@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinSerHost", "WinSerHost\Wi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoTopshelfService", "DemoTopshelfService\DemoTopshelfService.csproj", "{A7CF45DB-0902-4BF0-BA26-0489D16E2FAC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAHost", "ConsoleAHost\ConsoleAHost.csproj", "{7A6AD2DC-688B-4486-99DE-101FF7E88FA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{A7CF45DB-0902-4BF0-BA26-0489D16E2FAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7CF45DB-0902-4BF0-BA26-0489D16E2FAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7CF45DB-0902-4BF0-BA26-0489D16E2FAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A6AD2DC-688B-4486-99DE-101FF7E88FA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A6AD2DC-688B-4486-99DE-101FF7E88FA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A6AD2DC-688B-4486-99DE-101FF7E88FA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A6AD2DC-688B-4486-99DE-101FF7E88FA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

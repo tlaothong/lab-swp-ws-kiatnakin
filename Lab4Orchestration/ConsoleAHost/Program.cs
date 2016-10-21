@@ -1,20 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ConsoleHost
+namespace ConsoleAHost
 {
     class Program
     {
         static void Main(string[] args)
         {
-            using (var host = new ServiceHost(typeof(BankBService.BankBService)))
+            using (var host = new ServiceHost(typeof(BankAService.BankAService)))
             {
                 host.Open();
-                Console.WriteLine("BankB Service has started successfully.");
+                Console.WriteLine("BankA Service has started successfully.");
                 Console.WriteLine("Press ENTER to stop service.");
                 Console.ReadLine();
                 //host.Close();
