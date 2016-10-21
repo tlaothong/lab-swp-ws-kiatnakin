@@ -59,6 +59,31 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Service References\BankASvc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BankBSvc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <None Include="Service References\BankASvc\item.disco" />
+    <None Include="Service References\BankASvc\configuration91.svcinfo" />
+    <None Include="Service References\BankASvc\configuration.svcinfo" />
+    <None Include="Service References\BankASvc\Reference.svcmap">
+      <Generator>Xaml Activity Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\BankASvc\endpointConfigurationNameResolver.svcinfo" />
+    <None Include="Service References\BankBSvc\configuration91.svcinfo" />
+    <None Include="Service References\BankBSvc\configuration.svcinfo" />
+    <None Include="Service References\BankBSvc\Reference.svcmap">
+      <Generator>Xaml Activity Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\BankBSvc\endpointConfigurationNameResolver.svcinfo" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -67,6 +92,19 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Service References\BankASvc\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BankASvc\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BankBSvc\service.wsdl" />
+    <None Include="Service References\BankBSvc\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BankBSvc\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -76,6 +114,30 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\BankASvc\" />
+    <WCFMetadataStorage Include="Service References\BankBSvc\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BankASvc\BankAService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="Service References\BankASvc\TransferWorkflow.BankASvc.IBankAService.Withdraw.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="Service References\BankBSvc\TransferWorkflow.BankBSvc.IBankBService.Deposit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,79 @@
+<Activity mc:Ignorable="sap2010 sads" x:Class="TransferWorkflow.BankBSvc.Activities.Deposit" this:Deposit.EndpointConfigurationName="BasicHttpBinding_IBankBService"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:p="http://tempuri.org/"
+ xmlns:p1="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:sc="clr-namespace:System.ComponentModel;assembly=System"
+ xmlns:tb="clr-namespace:TransferWorkflow.BankBSvc;assembly=TransferWorkflow, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+ xmlns:tb1="clr-namespace:TransferWorkflow.BankBSvc;assembly=TransferWorkflow"
+ xmlns:this="clr-namespace:TransferWorkflow.BankBSvc.Activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="EndpointConfigurationName" Type="x:String">
+      <x:Property.Attributes>
+        <sc:DefaultValueAttribute>
+          <x:Arguments>
+            <x:String>BasicHttpBinding_IBankBService</x:String>
+          </x:Arguments>
+        </sc:DefaultValueAttribute>
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="amount" Type="InArgument(x:Double)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="DepositResult" Type="OutArgument(x:Double)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+  <Sequence>
+    <Sequence.Variables>
+      <x:Reference>__ReferenceID1</x:Reference>
+      <x:Reference>__ReferenceID2</x:Reference>
+    </Sequence.Variables>
+    <p1:Send x:Name="__ReferenceID0" Action="http://tempuri.org/IBankBService/Deposit" OperationName="Deposit" ServiceContractName="p:IBankBService">
+      <p1:Send.CorrelationInitializers>
+        <p1:RequestReplyCorrelationInitializer>
+          <p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+            <InArgument x:TypeArguments="p1:CorrelationHandle">
+              <VariableValue x:TypeArguments="p1:CorrelationHandle">
+                <VariableValue.Variable>
+                  <Variable x:TypeArguments="p1:CorrelationHandle" x:Name="__ReferenceID2" />
+                </VariableValue.Variable>
+              </VariableValue>
+            </InArgument>
+          </p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+        </p1:RequestReplyCorrelationInitializer>
+      </p1:Send.CorrelationInitializers>
+      <p1:SendMessageContent>
+        <InArgument x:TypeArguments="tb1:DepositRequest">[New TransferWorkflow.BankBSvc.DepositRequest() With { .amount = amount }]</InArgument>
+      </p1:SendMessageContent>
+      <p1:Send.EndpointConfigurationName>
+        <PropertyReference x:TypeArguments="x:String" PropertyName="EndpointConfigurationName" />
+      </p1:Send.EndpointConfigurationName>
+    </p1:Send>
+    <p1:ReceiveReply Request="{x:Reference __ReferenceID0}" Action="http://tempuri.org/IBankBService/DepositResponse">
+      <p1:ReceiveMessageContent>
+        <OutArgument x:TypeArguments="tb1:DepositResponse">
+          <VariableReference x:TypeArguments="tb1:DepositResponse">
+            <VariableReference.Variable>
+              <Variable x:TypeArguments="tb1:DepositResponse" x:Name="__ReferenceID1" Name="tempResult_29fdaa6b308d44aca8e04981e8702816" />
+            </VariableReference.Variable>
+          </VariableReference>
+        </OutArgument>
+      </p1:ReceiveMessageContent>
+    </p1:ReceiveReply>
+    <Assign>
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Double">[DepositResult]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Double">[tempResult_29fdaa6b308d44aca8e04981e8702816.DepositResult]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <sads:DebugSymbol.Symbol>d5ABRDpceHNyY1xsYWItc3dwLXdzLWtpYXRuYWtpblxMYWI0T3JjaGVzdHJhdGlvblxUcmFuc2ZlcldvcmtmbG93XFNlcnZpY2UgUmVmZXJlbmNlc1xCYW5rQlN2Y1xUcmFuc2ZlcldvcmtmbG93LkJhbmtCU3ZjLklCYW5rQlNlcnZpY2UuRGVwb3NpdC54YW1sCSADTg4CAQElBTkPAgEKOgVEFwIBB0UFTA4CAQI0OjSEAQIBDCoPLh8CAQs9C0EfAgEJSjBKawIBBUcxR0ACAQM=</sads:DebugSymbol.Symbol>
+  </Sequence>
+</Activity>
