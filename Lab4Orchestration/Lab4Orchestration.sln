@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoTopshelfService", "Demo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAHost", "ConsoleAHost\ConsoleAHost.csproj", "{7A6AD2DC-688B-4486-99DE-101FF7E88FA2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransferWorkflow", "TransferWorkflow\TransferWorkflow.csproj", "{9EAAE33A-0CB2-48FD-A934-00D7E8BF81A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{7A6AD2DC-688B-4486-99DE-101FF7E88FA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A6AD2DC-688B-4486-99DE-101FF7E88FA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A6AD2DC-688B-4486-99DE-101FF7E88FA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EAAE33A-0CB2-48FD-A934-00D7E8BF81A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EAAE33A-0CB2-48FD-A934-00D7E8BF81A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EAAE33A-0CB2-48FD-A934-00D7E8BF81A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EAAE33A-0CB2-48FD-A934-00D7E8BF81A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
