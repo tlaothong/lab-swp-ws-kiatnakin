@@ -26,5 +26,11 @@ namespace DemoWcfRest
         }
 
         // Add more operations here and mark them with [OperationContract]
+        [OperationContract]
+        [WebInvoke(Method = "POST")]
+        public void PostSample(string postBody)
+        {
+            // DO NOTHING
+        }
     }
 }
