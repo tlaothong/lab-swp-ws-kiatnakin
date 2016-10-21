@@ -5,3 +5,20 @@
 
 <h2>Simple1</h2>
 
+<ol id="books"></ol>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            // Send an AJAX request
+            $.getJSON('/api/books')
+                .done(function (data) {
+                    // On success, 'data' contains a list of products.
+                    $.each(data, function (key, item) {
+                        // Add a list item for the product.
+                        $('<li>', { text: item.title + ' by ' + item.author }).appendTo($('#books'));
+                    });
+                });
+        });
+    </script>
+}
