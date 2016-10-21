@@ -1,0 +1,241 @@
+﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices m:DataServiceVersion="3.0" m:MaxDataServiceVersion="3.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+    <Schema Namespace="DemoDataService.Models" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="Album">
+        <Key>
+          <PropertyRef Name="AlbumId" />
+        </Key>
+        <Property Name="AlbumId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Title" Type="Edm.String" />
+        <Property Name="ArtistId" Type="Edm.Int32" Nullable="false" />
+        <NavigationProperty Name="Artist" Relationship="DemoDataService.Models.DemoDataService_Models_Album_Artist_DemoDataService_Models_Artist_ArtistPartner" ToRole="Artist" FromRole="ArtistPartner" />
+        <NavigationProperty Name="Tracks" Relationship="DemoDataService.Models.DemoDataService_Models_Album_Tracks_DemoDataService_Models_Track_TracksPartner" ToRole="Tracks" FromRole="TracksPartner" />
+      </EntityType>
+      <EntityType Name="Artist">
+        <Key>
+          <PropertyRef Name="ArtistId" />
+        </Key>
+        <Property Name="ArtistId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
+        <NavigationProperty Name="Albums" Relationship="DemoDataService.Models.DemoDataService_Models_Artist_Albums_DemoDataService_Models_Album_AlbumsPartner" ToRole="Albums" FromRole="AlbumsPartner" />
+      </EntityType>
+      <EntityType Name="Track">
+        <Key>
+          <PropertyRef Name="TrackId" />
+        </Key>
+        <Property Name="TrackId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="AlbumId" Type="Edm.Int32" />
+        <Property Name="MediaTypeId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="GenreId" Type="Edm.Int32" />
+        <Property Name="Composer" Type="Edm.String" />
+        <Property Name="Milliseconds" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Bytes" Type="Edm.Int32" />
+        <Property Name="UnitPrice" Type="Edm.Decimal" Nullable="false" />
+        <NavigationProperty Name="Album" Relationship="DemoDataService.Models.DemoDataService_Models_Track_Album_DemoDataService_Models_Album_AlbumPartner" ToRole="Album" FromRole="AlbumPartner" />
+        <NavigationProperty Name="Genre" Relationship="DemoDataService.Models.DemoDataService_Models_Track_Genre_DemoDataService_Models_Genre_GenrePartner" ToRole="Genre" FromRole="GenrePartner" />
+        <NavigationProperty Name="InvoiceLines" Relationship="DemoDataService.Models.DemoDataService_Models_Track_InvoiceLines_DemoDataService_Models_InvoiceLine_InvoiceLinesPartner" ToRole="InvoiceLines" FromRole="InvoiceLinesPartner" />
+        <NavigationProperty Name="MediaType" Relationship="DemoDataService.Models.DemoDataService_Models_Track_MediaType_DemoDataService_Models_MediaType_MediaTypePartner" ToRole="MediaType" FromRole="MediaTypePartner" />
+        <NavigationProperty Name="Playlists" Relationship="DemoDataService.Models.DemoDataService_Models_Track_Playlists_DemoDataService_Models_Playlist_PlaylistsPartner" ToRole="Playlists" FromRole="PlaylistsPartner" />
+      </EntityType>
+      <EntityType Name="Genre">
+        <Key>
+          <PropertyRef Name="GenreId" />
+        </Key>
+        <Property Name="GenreId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
+        <NavigationProperty Name="Tracks" Relationship="DemoDataService.Models.DemoDataService_Models_Genre_Tracks_DemoDataService_Models_Track_TracksPartner" ToRole="Tracks" FromRole="TracksPartner" />
+      </EntityType>
+      <EntityType Name="InvoiceLine">
+        <Key>
+          <PropertyRef Name="InvoiceLineId" />
+        </Key>
+        <Property Name="InvoiceLineId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="InvoiceId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TrackId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="UnitPrice" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Quantity" Type="Edm.Int32" Nullable="false" />
+        <NavigationProperty Name="Invoice" Relationship="DemoDataService.Models.DemoDataService_Models_InvoiceLine_Invoice_DemoDataService_Models_Invoice_InvoicePartner" ToRole="Invoice" FromRole="InvoicePartner" />
+        <NavigationProperty Name="Track" Relationship="DemoDataService.Models.DemoDataService_Models_InvoiceLine_Track_DemoDataService_Models_Track_TrackPartner" ToRole="Track" FromRole="TrackPartner" />
+      </EntityType>
+      <EntityType Name="Invoice">
+        <Key>
+          <PropertyRef Name="InvoiceId" />
+        </Key>
+        <Property Name="InvoiceId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CustomerId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="InvoiceDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="BillingAddress" Type="Edm.String" />
+        <Property Name="BillingCity" Type="Edm.String" />
+        <Property Name="BillingState" Type="Edm.String" />
+        <Property Name="BillingCountry" Type="Edm.String" />
+        <Property Name="BillingPostalCode" Type="Edm.String" />
+        <Property Name="Total" Type="Edm.Decimal" Nullable="false" />
+        <NavigationProperty Name="Customer" Relationship="DemoDataService.Models.DemoDataService_Models_Invoice_Customer_DemoDataService_Models_Customer_CustomerPartner" ToRole="Customer" FromRole="CustomerPartner" />
+        <NavigationProperty Name="InvoiceLines" Relationship="DemoDataService.Models.DemoDataService_Models_Invoice_InvoiceLines_DemoDataService_Models_InvoiceLine_InvoiceLinesPartner" ToRole="InvoiceLines" FromRole="InvoiceLinesPartner" />
+      </EntityType>
+      <EntityType Name="Customer">
+        <Key>
+          <PropertyRef Name="CustomerId" />
+        </Key>
+        <Property Name="CustomerId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="FirstName" Type="Edm.String" />
+        <Property Name="LastName" Type="Edm.String" />
+        <Property Name="Company" Type="Edm.String" />
+        <Property Name="Address" Type="Edm.String" />
+        <Property Name="City" Type="Edm.String" />
+        <Property Name="State" Type="Edm.String" />
+        <Property Name="Country" Type="Edm.String" />
+        <Property Name="PostalCode" Type="Edm.String" />
+        <Property Name="Phone" Type="Edm.String" />
+        <Property Name="Fax" Type="Edm.String" />
+        <Property Name="Email" Type="Edm.String" />
+        <Property Name="SupportRepId" Type="Edm.Int32" />
+        <NavigationProperty Name="Employee" Relationship="DemoDataService.Models.DemoDataService_Models_Customer_Employee_DemoDataService_Models_Employee_EmployeePartner" ToRole="Employee" FromRole="EmployeePartner" />
+        <NavigationProperty Name="Invoices" Relationship="DemoDataService.Models.DemoDataService_Models_Customer_Invoices_DemoDataService_Models_Invoice_InvoicesPartner" ToRole="Invoices" FromRole="InvoicesPartner" />
+      </EntityType>
+      <EntityType Name="Employee">
+        <Key>
+          <PropertyRef Name="EmployeeId" />
+        </Key>
+        <Property Name="EmployeeId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="LastName" Type="Edm.String" />
+        <Property Name="FirstName" Type="Edm.String" />
+        <Property Name="Title" Type="Edm.String" />
+        <Property Name="ReportsTo" Type="Edm.Int32" />
+        <Property Name="BirthDate" Type="Edm.DateTime" />
+        <Property Name="HireDate" Type="Edm.DateTime" />
+        <Property Name="Address" Type="Edm.String" />
+        <Property Name="City" Type="Edm.String" />
+        <Property Name="State" Type="Edm.String" />
+        <Property Name="Country" Type="Edm.String" />
+        <Property Name="PostalCode" Type="Edm.String" />
+        <Property Name="Phone" Type="Edm.String" />
+        <Property Name="Fax" Type="Edm.String" />
+        <Property Name="Email" Type="Edm.String" />
+        <NavigationProperty Name="Customers" Relationship="DemoDataService.Models.DemoDataService_Models_Employee_Customers_DemoDataService_Models_Customer_CustomersPartner" ToRole="Customers" FromRole="CustomersPartner" />
+        <NavigationProperty Name="Employee1" Relationship="DemoDataService.Models.DemoDataService_Models_Employee_Employee1_DemoDataService_Models_Employee_Employee1Partner" ToRole="Employee1" FromRole="Employee1Partner" />
+        <NavigationProperty Name="Employee2" Relationship="DemoDataService.Models.DemoDataService_Models_Employee_Employee2_DemoDataService_Models_Employee_Employee2Partner" ToRole="Employee2" FromRole="Employee2Partner" />
+      </EntityType>
+      <EntityType Name="MediaType">
+        <Key>
+          <PropertyRef Name="MediaTypeId" />
+        </Key>
+        <Property Name="MediaTypeId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
+        <NavigationProperty Name="Tracks" Relationship="DemoDataService.Models.DemoDataService_Models_MediaType_Tracks_DemoDataService_Models_Track_TracksPartner" ToRole="Tracks" FromRole="TracksPartner" />
+      </EntityType>
+      <EntityType Name="Playlist">
+        <Key>
+          <PropertyRef Name="PlaylistId" />
+        </Key>
+        <Property Name="PlaylistId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
+        <NavigationProperty Name="Tracks" Relationship="DemoDataService.Models.DemoDataService_Models_Playlist_Tracks_DemoDataService_Models_Track_TracksPartner" ToRole="Tracks" FromRole="TracksPartner" />
+      </EntityType>
+      <Association Name="DemoDataService_Models_Album_Artist_DemoDataService_Models_Artist_ArtistPartner">
+        <End Type="DemoDataService.Models.Artist" Role="Artist" Multiplicity="0..1" />
+        <End Type="DemoDataService.Models.Album" Role="ArtistPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="DemoDataService_Models_Album_Tracks_DemoDataService_Models_Track_TracksPartner">
+        <End Type="DemoDataService.Models.Track" Role="Tracks" Multiplicity="*" />
+        <End Type="DemoDataService.Models.Album" Role="TracksPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="DemoDataService_Models_Artist_Albums_DemoDataService_Models_Album_AlbumsPartner">
+        <End Type="DemoDataService.Models.Album" Role="Albums" Multiplicity="*" />
+        <End Type="DemoDataService.Models.Artist" Role="AlbumsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="DemoDataService_Models_Track_Album_DemoDataService_Models_Album_AlbumPartner">
+        <End Type="DemoDataService.Models.Album" Role="Album" Multiplicity="0..1" />
+        <End Type="DemoDataService.Models.Track" Role="AlbumPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="DemoDataService_Models_Track_Genre_DemoDataService_Models_Genre_GenrePartner">
+        <End Type="DemoDataService.Models.Genre" Role="Genre" Multiplicity="0..1" />
+        <End Type="DemoDataService.Models.Track" Role="GenrePartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="DemoDataService_Models_Track_InvoiceLines_DemoDataService_Models_InvoiceLine_InvoiceLinesPartner">
+        <End Type="DemoDataService.Models.InvoiceLine" Role="InvoiceLines" Multiplicity="*" />
+        <End Type="DemoDataService.Models.Track" Role="InvoiceLinesPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="DemoDataService_Models_Track_MediaType_DemoDataService_Models_MediaType_MediaTypePartner">
+        <End Type="DemoDataService.Models.MediaType" Role="MediaType" Multiplicity="0..1" />
+        <End Type="DemoDataService.Models.Track" Role="MediaTypePartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="DemoDataService_Models_Track_Playlists_DemoDataService_Models_Playlist_PlaylistsPartner">
+        <End Type="DemoDataService.Models.Playlist" Role="Playlists" Multiplicity="*" />
+        <End Type="DemoDataService.Models.Track" Role="PlaylistsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="DemoDataService_Models_Genre_Tracks_DemoDataService_Models_Track_TracksPartner">
+        <End Type="DemoDataService.Models.Track" Role="Tracks" Multiplicity="*" />
+        <End Type="DemoDataService.Models.Genre" Role="TracksPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="DemoDataService_Models_InvoiceLine_Invoice_DemoDataService_Models_Invoice_InvoicePartner">
+        <End Type="DemoDataService.Models.Invoice" Role="Invoice" Multiplicity="0..1" />
+        <End Type="DemoDataService.Models.InvoiceLine" Role="InvoicePartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="DemoDataService_Models_InvoiceLine_Track_DemoDataService_Models_Track_TrackPartner">
+        <End Type="DemoDataService.Models.Track" Role="Track" Multiplicity="0..1" />
+        <End Type="DemoDataService.Models.InvoiceLine" Role="TrackPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="DemoDataService_Models_Invoice_Customer_DemoDataService_Models_Customer_CustomerPartner">
+        <End Type="DemoDataService.Models.Customer" Role="Customer" Multiplicity="0..1" />
+        <End Type="DemoDataService.Models.Invoice" Role="CustomerPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="DemoDataService_Models_Invoice_InvoiceLines_DemoDataService_Models_InvoiceLine_InvoiceLinesPartner">
+        <End Type="DemoDataService.Models.InvoiceLine" Role="InvoiceLines" Multiplicity="*" />
+        <End Type="DemoDataService.Models.Invoice" Role="InvoiceLinesPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="DemoDataService_Models_Customer_Employee_DemoDataService_Models_Employee_EmployeePartner">
+        <End Type="DemoDataService.Models.Employee" Role="Employee" Multiplicity="0..1" />
+        <End Type="DemoDataService.Models.Customer" Role="EmployeePartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="DemoDataService_Models_Customer_Invoices_DemoDataService_Models_Invoice_InvoicesPartner">
+        <End Type="DemoDataService.Models.Invoice" Role="Invoices" Multiplicity="*" />
+        <End Type="DemoDataService.Models.Customer" Role="InvoicesPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="DemoDataService_Models_Employee_Customers_DemoDataService_Models_Customer_CustomersPartner">
+        <End Type="DemoDataService.Models.Customer" Role="Customers" Multiplicity="*" />
+        <End Type="DemoDataService.Models.Employee" Role="CustomersPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="DemoDataService_Models_Employee_Employee1_DemoDataService_Models_Employee_Employee1Partner">
+        <End Type="DemoDataService.Models.Employee" Role="Employee1" Multiplicity="*" />
+        <End Type="DemoDataService.Models.Employee" Role="Employee1Partner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="DemoDataService_Models_Employee_Employee2_DemoDataService_Models_Employee_Employee2Partner">
+        <End Type="DemoDataService.Models.Employee" Role="Employee2" Multiplicity="0..1" />
+        <End Type="DemoDataService.Models.Employee" Role="Employee2Partner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="DemoDataService_Models_MediaType_Tracks_DemoDataService_Models_Track_TracksPartner">
+        <End Type="DemoDataService.Models.Track" Role="Tracks" Multiplicity="*" />
+        <End Type="DemoDataService.Models.MediaType" Role="TracksPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="DemoDataService_Models_Playlist_Tracks_DemoDataService_Models_Track_TracksPartner">
+        <End Type="DemoDataService.Models.Track" Role="Tracks" Multiplicity="*" />
+        <End Type="DemoDataService.Models.Playlist" Role="TracksPartner" Multiplicity="0..1" />
+      </Association>
+    </Schema>
+    <Schema Namespace="Default" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityContainer Name="Container" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="Albums" EntityType="DemoDataService.Models.Album" />
+        <EntitySet Name="Artists" EntityType="DemoDataService.Models.Artist" />
+        <EntitySet Name="Tracks" EntityType="DemoDataService.Models.Track" />
+        <AssociationSet Name="DemoDataService_Models_Album_Artist_DemoDataService_Models_Artist_ArtistPartnerSet" Association="DemoDataService.Models.DemoDataService_Models_Album_Artist_DemoDataService_Models_Artist_ArtistPartner">
+          <End Role="ArtistPartner" EntitySet="Albums" />
+          <End Role="Artist" EntitySet="Artists" />
+        </AssociationSet>
+        <AssociationSet Name="DemoDataService_Models_Album_Tracks_DemoDataService_Models_Track_TracksPartnerSet" Association="DemoDataService.Models.DemoDataService_Models_Album_Tracks_DemoDataService_Models_Track_TracksPartner">
+          <End Role="TracksPartner" EntitySet="Albums" />
+          <End Role="Tracks" EntitySet="Tracks" />
+        </AssociationSet>
+        <AssociationSet Name="DemoDataService_Models_Artist_Albums_DemoDataService_Models_Album_AlbumsPartnerSet" Association="DemoDataService.Models.DemoDataService_Models_Artist_Albums_DemoDataService_Models_Album_AlbumsPartner">
+          <End Role="AlbumsPartner" EntitySet="Artists" />
+          <End Role="Albums" EntitySet="Albums" />
+        </AssociationSet>
+        <AssociationSet Name="DemoDataService_Models_Track_Album_DemoDataService_Models_Album_AlbumPartnerSet" Association="DemoDataService.Models.DemoDataService_Models_Track_Album_DemoDataService_Models_Album_AlbumPartner">
+          <End Role="AlbumPartner" EntitySet="Tracks" />
+          <End Role="Album" EntitySet="Albums" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

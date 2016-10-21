@@ -18,6 +18,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoClassFamilyClient", "De
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoWcfRest", "DemoWcfRest\DemoWcfRest.csproj", "{131FC3D9-0A6E-4EC1-94A3-A26AEC6017DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoDataService", "DemoDataService\DemoDataService.csproj", "{5CBBECB2-2B60-4E18-9B39-B77EE7391557}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoDataServiceClient", "DemoDataServiceClient\DemoDataServiceClient.csproj", "{352BACA1-32E0-4326-A82F-7C4C5D42EAF8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +52,14 @@ Global
 		{131FC3D9-0A6E-4EC1-94A3-A26AEC6017DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{131FC3D9-0A6E-4EC1-94A3-A26AEC6017DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{131FC3D9-0A6E-4EC1-94A3-A26AEC6017DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CBBECB2-2B60-4E18-9B39-B77EE7391557}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CBBECB2-2B60-4E18-9B39-B77EE7391557}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CBBECB2-2B60-4E18-9B39-B77EE7391557}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CBBECB2-2B60-4E18-9B39-B77EE7391557}.Release|Any CPU.Build.0 = Release|Any CPU
+		{352BACA1-32E0-4326-A82F-7C4C5D42EAF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{352BACA1-32E0-4326-A82F-7C4C5D42EAF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{352BACA1-32E0-4326-A82F-7C4C5D42EAF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{352BACA1-32E0-4326-A82F-7C4C5D42EAF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
